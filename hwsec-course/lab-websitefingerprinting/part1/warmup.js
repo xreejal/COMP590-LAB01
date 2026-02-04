@@ -31,7 +31,7 @@ function measureNLines() {
     try {
       arr = new Uint8Array(N * LINE_BYTES);
     } catch (e) {
-      result.push(["N/A"]);
+      result.push(`N=${N}: N/A`);
       continue;
     }
     const measurements = [];
@@ -45,7 +45,7 @@ function measureNLines() {
       measurements.push(end - start);
     }
 
-    result.push(measurements);
+    result.push(`N=${N}: [${measurements.join(", ")}]`);
   }
 
   if (sink === 123) console.log("sink", sink);

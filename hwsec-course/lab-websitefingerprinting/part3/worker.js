@@ -36,8 +36,6 @@ function record(traceLengthMs) {
     T[i] = iters;
   }
 
-  if (x === 123) postMessage(JSON.stringify({ x }));
-
   // Once done recording, send result to main thread
   postMessage(JSON.stringify(T));
 }
